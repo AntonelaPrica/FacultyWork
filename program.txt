@@ -1,0 +1,14 @@
+DATA
+    A:INTEGER;
+    B:BOOLEAN;
+    C:ARRAY[3] OF INTEGER;
+BEGIN
+    A=2;
+    WRITE("thisisastring");
+    IF A <= 2 THEN
+        B=0;
+    ELSE
+        B=1;
+    ENDIF
+    A=A*B;
+END.

@@ -1,0 +1,10 @@
+N = S B C D E F
+E = a b c f g h
+S = S
+P =
+S -> aBDh
+B -> cC
+C -> bC | e
+D -> EF
+E -> g | e
+F -> f | e

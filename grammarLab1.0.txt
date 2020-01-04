@@ -1,0 +1,26 @@
+N = declist cmpdstmt declaration type simpletype arraydecl stmlist stmt simplestmt structstmt assignstmt iostmt expression term factor ifstmt whilestmt condition program relation letter
+E = + - * / = < <= > >= <> ( ) [ ] : ; . space data integer boolean array of begin end read write if then else endif while do endwhile identifier unsignedconst noconst character constchar string char boolean constant A B C D E F G H I J K L M N O P R S T U V W X Y Z
+S = program
+P =
+program -> data declist ; cmpdstmt .
+declist -> declaration | declaration ; declist
+declaration -> identifier : type
+type -> simpletype | arraydecl
+simpletype -> integer | boolean
+arraydecl -> array [ unsignedconst ] of simpletype
+cmpdstmt -> begin stmlist end
+stmlist -> stmt | stmt stmlist
+stmt -> simplestmt ; | structstmt
+simplestmt -> assignstmt | iostmt
+assignstmt -> identifier = expression | identifier [ unsignedconst ] = expression
+expression -> expression + term | expression - term | term
+term ->  term * factor | term / factor | factor
+factor -> ( expression ) | identifier | constant
+iostmt -> read identifier | write ( identifier ) | write ( constant )
+structstmt -> cmpdstmt | ifstmt | whilestmt
+ifstmt -> if condition then stmt endif | if condition then stmt else stmt endif
+whilestmt -> while condition do stmt endwhile
+condition -> expression relation expression
+relation -> < | <= | = | <> | >= | >
+identifier -> letter identifier
+letter -> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | R | S | T | U | V | W | X | Y | Z

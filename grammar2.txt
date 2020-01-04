@@ -1,0 +1,12 @@
+N = S A B C D
+E = + * ( ) a
+S = S
+P =
+S -> B A
+A -> + B A
+A -> e
+B -> D C
+C -> * D C
+C -> e
+D -> ( S )
+D -> a
